@@ -401,31 +401,85 @@
 
 // Implement this flow using callbacks only (do not use Promises or async/await).
 
-// Ans:  function loginUser(user, cb1) {
-//    console.log("getting user");
-//    setTimeout(() => {
-//       cb1({ userid: 1, name: "muneesh", age: 12 })
-//    }, 1000)
+// Ans : function loginUser(user, cb1) {
+//     console.log("getting user");
+//     setTimeout(() => {
+//         cb1({ userid: 1, name: "muneesh", age: 12 })
+//     }, 1000)
 // };
 
 // function fetchPermission(userID, cb2) {
-//    console.log("Fetching Permission");
-//    setTimeout(() => {
-//       cb2(["Edit = No", "View =yes", "Read = yes"]);
-//    }, 1000)
+//     console.log("Fetching Permission");
+//     setTimeout(() => {
+//         cb2(["Edit = No", "View =yes", "Read = yes"]);
+//     }, 1000)
 // };
 
 // function loadDashboard(permissions, cb3) {
-//    console.log("Loading Dashboard");
-//    setTimeout(() => {
-//       cb3("Dashboard Loaded");
-//    }, 1000)
+//     console.log("Loading Dashboard");
+//     setTimeout(() => {
+//         cb3("Dashboard Loaded");
+//     }, 1000)
 // };
 
 // loginUser("Muneesh", function (userObj) {
-//    fetchPermission(userObj.userid, function (permissionsArray) {
-//       loadDashboard(permissionsArray, function (e) {
-//          console.log(e)
-//       })
-//    })
+//     fetchPermission(userObj.userid, function (permissionsArray) {
+//         loadDashboard(permissionsArray, function (e) {
+//             console.log(e)
+//         })
+//     })
 // });
+
+// Promise : it is an object that represent the future result of the asynchronous operation
+
+// example 1 :
+//  let prm1 = new Promise((resolve, reject) => {
+//    reject();
+// })
+// prm1.then(() => {
+//    console.log("Matter reslove hogya bhau.")
+// })
+//    .catch(() => {
+//       console.log("Bhau matter mein error aagya.")
+//    })
+
+// example 2 :
+
+// always remember that fatch will have two .then, first is to convert the data into readeable json and then we have another .then to read the data 
+
+// fetch(`https://randomuser.me/api/`)
+//    .then((raw) => {
+//       return raw.json();
+//    })
+//    .then((data) => {
+//       console.log(data.results[0].name.first)
+//    })
+
+// Async Await
+
+// function getNum() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             let num = Math.floor(Math.random() * 10);
+//             if (num > 5) {
+//                 resolve("Number is greater than 5");
+//             } else {
+//                 reject("Number is less than 5");
+//             }
+//         }, 1000)
+//     });
+// }
+
+
+// async function abcd() {
+//     try {
+//         let ans = await getNum();
+//         console.log(ans);
+//     } catch (err) {
+//         console.log(err);
+//     }
+// }
+
+// abcd();
+
+
