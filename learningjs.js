@@ -462,7 +462,7 @@
 //         setTimeout(() => {
 //             let num = Math.floor(Math.random() * 10);
 //             if (num > 5) {
-//                 resolve("Number is greater than 5");
+//                 resolve(num);
 //             } else {
 //                 reject("Number is less than 5");
 //             }
