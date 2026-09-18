@@ -15,13 +15,24 @@
 
 // another way  
 
-async function getWeather(city) {
-    let apikey = '61a88622a478ed95525e30e8d767f872'
-    let raw = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`)
+// async function getWeather(city) {
+//     let apikey = '61a88622a478ed95525e30e8d767f872'
+//     try {
+//         let raw = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`)
+//         if (!raw.ok) {
+//             throw new Error('city not found');
+//         }
+//         let realdata = await raw.json();
+//         if (realdata.main.temp > 30) {
+//             throw new Error("Too Hot Outside")
+//         } else {
+//             console.log("You can play Outside")
+//         }
+//     }
+//     catch (err) {
+//         console.error(err)
+//     }
 
-    let realdata = await raw.json();
-    console.log(realdata)
+// };
 
-};
-
-getWeather('Jammu and Kashmir')
+// getWeather('Jammu'); 
