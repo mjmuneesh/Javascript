@@ -482,4 +482,106 @@
 
 // abcd();
 
+// Scenerio Based Questions on Promise and async/await 
 
+// one way to do it 
+
+// function getWeather(city) {
+//     let apikey = '61a88622a478ed95525e30e8d767f872'
+//     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`)
+//         .then((raw) => {
+//             return raw.json()
+//         })
+//         .then((realdata) => {
+//             console.log(realdata);
+//         })
+// };
+
+// getWeather('Bhopal')
+
+// another way  
+
+// async function getWeather(city) {
+//     let apikey = '61a88622a478ed95525e30e8d767f872'
+//     try {
+//         let raw = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`)
+//         console.log(raw)
+//         if (!raw.ok) {
+//             throw new Error('city not found');
+//         }
+//         let realdata = await raw.json();
+//         if (realdata.main.temp > 30) {
+//             throw new Error("Too Hot Outside")
+//         } else {
+//             console.log("You can play Outside")
+//         }
+//     }
+//     catch (err) {
+//         console.error(err)
+//     }
+
+// };
+
+// getWeather('Jammu'); 
+
+
+// Q2: send bulk emails using async await and do the error handling as well  
+
+// let user = ["muneeshsharma@gmail.com", "ashimagupta@gmail.com", "aashi@gmail.com", "shristi@gmail.com"]
+
+// function sendEmail(email) {
+//     return new Promise((res, rej) => {
+//         let timer = Math.floor(Math.random() * 5);
+
+//         setTimeout(() => {
+//             let probility = Math.floor(Math.random() * 10);
+//             if (probility <= 5) {
+//                 res("email sent sucessfully")
+//             } else {
+//                 rej("email not sent")
+//             }
+
+//         }, timer * 1000);
+
+//     })
+// }
+
+// async function sendEmails(userlist) {
+//     let allEmails = userlist.map(function (email) {
+//         return sendEmail(email)
+//             .then((val) => {
+//                 return (val)
+//             })
+//             .catch((err) => {
+//                 return (err)
+//             })
+//     })
+
+//     let result = await Promise.all(allEmails)
+
+//     result.forEach((status) => {
+//         console.log(status)
+//     })
+// }
+
+// sendEmails(user);
+
+
+// Debouncing 
+
+// function debounce(fn, delay) {
+//     let timer;
+//     return function () {
+//         clearTimeout();
+//         timer = setTimeout(() => {
+//             fn();
+//         }, delay)
+//     }
+
+// }
+
+// let search = debounce(function () {
+//     console.log("event called")
+// }, 500)
+
+// search();
