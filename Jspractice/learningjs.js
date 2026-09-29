@@ -585,3 +585,22 @@
 // }, 500)
 
 // search();
+
+// Throttling
+
+// function throttle(fn, delay) {
+//     let last = 0;
+//     return function () {
+//         const now = Date.now();
+//         if (now - last >= delay) {
+//             last = now
+//             fn();
+//         }
+//     }
+
+// }
+
+// window.addEventListener('click', throttle((e) => {
+//     console.log("chala")
+// }, 2000)
+// )

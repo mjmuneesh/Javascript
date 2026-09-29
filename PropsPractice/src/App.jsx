@@ -1,4 +1,4 @@
-import Card from './components/Card.jsx'
+import Card from './components/card.jsx'
 import Button from './components/Button.jsx'
 
 
