@@ -1,5 +1,6 @@
 import Card from './components/card.jsx'
-import Button from './components/Button.jsx'
+// import Button from './components/Button.jsx'
+import Navbar from './components/Navbar.jsx';
 
 
 function App() {
@@ -68,19 +69,25 @@ function App() {
   ];
 
   return (
-    <div className='min-h-screen bg-zinc-900 p-8 flex flex-wrap justify-center items-center gap-6'>
-      {users.map((elem) => {
-        return (
-          <Card
-            key={elem.name}
-            name={elem.name}
-            age={elem.age}
-            designation={elem.designation}
-            profileImage={elem.profileImage}
-          />
-        )
-      })}
+    <div className='main bg-zinc-900'>
+      <Navbar title='Tsaask' links={['Home', 'Product', 'Service', 'Carrer']} />
+      <Navbar title='Tsaask' links={['Home', 'Product', 'Service', 'Carrer', 'joinus']} />
+      <div className='min-h-screen bg-zinc-900 p-8 flex flex-wrap justify-center items-center gap-6'>
+        {users.map((elem) => {
+          return (
+            <Card
+              key={elem.name}
+              name={elem.name}
+              age={elem.age}
+              designation={elem.designation}
+              profileImage={elem.profileImage}
+            />
+          )
+        })}
+      </div>
+      {/* <Button text='Muneesh' /> */}
     </div>
+
   )
 }
 

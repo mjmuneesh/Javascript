@@ -2,7 +2,7 @@ import React from 'react'
 
 const Button = (props) => {
     return (
-        <div className="text-white bg-red-400 px-4 py-4 m-6 mt-2 rounded w-fit">
+        <div className="text-white bg-red-400 rounded-xl p-2 w-fit ">
             <button> {props.text}</button >
         </div >
     )
