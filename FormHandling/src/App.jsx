@@ -7,25 +7,30 @@ function App(){
   const [profile, setProfile] = useState('')
   const [desigination, setDesigination] = useState('')
   const [description, setDescription] = useState('')
-  const[alluser, setAlluser]= useState([]);
+  let local = JSON.parse(localStorage.getItem("olduser")) || []
+  const[alluser, setAlluser]= useState(local);
+  console.log(local)
+
 
 function submitHandler(e){
 e.preventDefault();
-console.log("submitted")
+// console.log("submitted")
+const olduser = [...alluser]
+olduser.push({username, profile, description, desigination})
+setAlluser(olduser)
+localStorage.setItem('olduser', JSON.stringify(olduser))
+console.log(olduser)
 setProfile('')
 setUsername('')
 setDescription('')
 setDesigination('')
-const olduser = [...alluser]
-olduser.push({username, profile, description, desigination})
-setAlluser(olduser)
-console.log(olduser)
 }
 
 function deleteHandler(idx){
   const deluser  = [...alluser]
   deluser.splice(idx ,1)
   setAlluser(deluser)
+  localStorage.setItem('olduser', JSON.stringify(deluser))
 }
 
   return (
